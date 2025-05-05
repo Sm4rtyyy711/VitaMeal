@@ -7,6 +7,11 @@ const CallToAction: React.FC = () => {
   return (
     <section className="py-16 bg-brand-green text-[#fdf4cf]">
       <div className="container mx-auto px-4 text-center">
+        <img 
+          src="/lovable-uploads/08779fad-b388-4145-a496-ad133012d718.png" 
+          alt="VitaMeal Logo" 
+          className="h-16 mx-auto mb-6"
+        />
         <h2 className="text-3xl md:text-4xl font-bold mb-6">Bereit für gesundes, leckeres Essen?</h2>
         <p className="text-xl mb-8 max-w-2xl mx-auto">
           Starte jetzt mit VitaMeal und erhalte frische, ausgewogene Mahlzeiten direkt zu dir nach Hause.

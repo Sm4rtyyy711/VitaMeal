@@ -19,7 +19,11 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <span className="text-2xl font-bold text-brand-green">VitaMeal</span>
+            <img 
+              src="/lovable-uploads/08779fad-b388-4145-a496-ad133012d718.png" 
+              alt="VitaMeal Logo" 
+              className="h-12 mr-2" 
+            />
           </Link>
 
           {/* Desktop Navigation */}

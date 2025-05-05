@@ -9,7 +9,13 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Column 1 - Logo & About */}
           <div>
-            <h3 className="text-xl font-bold mb-4">VitaMeal</h3>
+            <div className="flex items-center mb-4">
+              <img 
+                src="/lovable-uploads/08779fad-b388-4145-a496-ad133012d718.png" 
+                alt="VitaMeal Logo" 
+                className="h-12 mr-2" 
+              />
+            </div>
             <p className="text-gray-300 mb-4">
               Gesunde Mahlzeiten, frisch zubereitet und direkt zu dir nach Hause geliefert.
             </p>
