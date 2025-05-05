@@ -48,8 +48,8 @@ const Faq: React.FC = () => {
   
   const faqs: FAQ[] = [
     {
-      question: "Wie funktioniert PrepMyMeal?",
-      answer: "PrepMyMeal ist ganz einfach: Du wählst deine Mahlzeiten aus unserem Shop, bestellst online und erhältst deine frisch zubereiteten Mahlzeiten direkt nach Hause. Die Gerichte sind fertig zubereitet und müssen nur noch aufgewärmt werden.",
+      question: "Wie funktioniert VitaMeal?",
+      answer: "VitaMeal ist ganz einfach: Du wählst deine Mahlzeiten aus unserem Shop, bestellst online und erhältst deine frisch zubereiteten Mahlzeiten direkt nach Hause. Die Gerichte sind fertig zubereitet und müssen nur noch aufgewärmt werden.",
       category: "allgemein"
     },
     {
@@ -119,11 +119,11 @@ const Faq: React.FC = () => {
       
       <main className="flex-grow bg-brand-lightgray">
         {/* Hero Section */}
-        <div className="bg-brand-green text-white py-16">
+        <div className="bg-brand-green text-[#fdf4cf] py-16">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-3xl md:text-4xl font-bold mb-4">Häufig gestellte Fragen</h1>
             <p className="text-xl max-w-2xl mx-auto">
-              Hier findest du Antworten auf die häufigsten Fragen zu PrepMyMeal.
+              Hier findest du Antworten auf die häufigsten Fragen zu VitaMeal.
             </p>
           </div>
         </div>
@@ -134,35 +134,35 @@ const Faq: React.FC = () => {
             <div className="flex flex-wrap gap-2">
               <Button
                 variant={activeCategory === 'alle' ? "default" : "outline"}
-                className={activeCategory === 'alle' ? "bg-brand-green hover:bg-brand-darkgreen" : ""}
+                className={activeCategory === 'alle' ? "bg-brand-green hover:bg-brand-darkgreen text-[#fdf4cf]" : ""}
                 onClick={() => setActiveCategory('alle')}
               >
                 Alle Fragen
               </Button>
               <Button
                 variant={activeCategory === 'allgemein' ? "default" : "outline"}
-                className={activeCategory === 'allgemein' ? "bg-brand-green hover:bg-brand-darkgreen" : ""}
+                className={activeCategory === 'allgemein' ? "bg-brand-green hover:bg-brand-darkgreen text-[#fdf4cf]" : ""}
                 onClick={() => setActiveCategory('allgemein')}
               >
                 Allgemein
               </Button>
               <Button
                 variant={activeCategory === 'bestellung' ? "default" : "outline"}
-                className={activeCategory === 'bestellung' ? "bg-brand-green hover:bg-brand-darkgreen" : ""}
+                className={activeCategory === 'bestellung' ? "bg-brand-green hover:bg-brand-darkgreen text-[#fdf4cf]" : ""}
                 onClick={() => setActiveCategory('bestellung')}
               >
                 Bestellung
               </Button>
               <Button
                 variant={activeCategory === 'lieferung' ? "default" : "outline"}
-                className={activeCategory === 'lieferung' ? "bg-brand-green hover:bg-brand-darkgreen" : ""}
+                className={activeCategory === 'lieferung' ? "bg-brand-green hover:bg-brand-darkgreen text-[#fdf4cf]" : ""}
                 onClick={() => setActiveCategory('lieferung')}
               >
                 Lieferung
               </Button>
               <Button
                 variant={activeCategory === 'ernaehrung' ? "default" : "outline"}
-                className={activeCategory === 'ernaehrung' ? "bg-brand-green hover:bg-brand-darkgreen" : ""}
+                className={activeCategory === 'ernaehrung' ? "bg-brand-green hover:bg-brand-darkgreen text-[#fdf4cf]" : ""}
                 onClick={() => setActiveCategory('ernaehrung')}
               >
                 Ernährung
@@ -171,7 +171,7 @@ const Faq: React.FC = () => {
           </div>
           
           {/* FAQ List */}
-          <div className="bg-white rounded-lg shadow-md p-8">
+          <div className="bg-[#fdf4cf] rounded-lg shadow-md p-8">
             {filteredFaqs.map((faq, index) => (
               <FaqItem key={index} faq={faq} index={index} />
             ))}
@@ -185,7 +185,7 @@ const Faq: React.FC = () => {
             </p>
             <Button 
               asChild
-              className="bg-brand-green hover:bg-brand-darkgreen"
+              className="bg-brand-green hover:bg-brand-darkgreen text-[#fdf4cf]"
             >
               <Link to="/contact">Kontakt aufnehmen</Link>
             </Button>

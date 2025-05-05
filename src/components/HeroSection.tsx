@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 
 const HeroSection: React.FC = () => {
   return (
-    <div className="relative bg-gray-900 text-white">
+    <div className="relative bg-gray-900 text-[#fdf4cf]">
       {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center" 
@@ -30,7 +30,7 @@ const HeroSection: React.FC = () => {
           <Button 
             asChild
             size="lg" 
-            className="bg-brand-green hover:bg-brand-darkgreen text-white px-8 py-6 text-lg"
+            className="bg-brand-green hover:bg-brand-darkgreen text-[#fdf4cf] px-8 py-6 text-lg"
           >
             <Link to="/shop">Zum Shop</Link>
           </Button>
@@ -39,7 +39,7 @@ const HeroSection: React.FC = () => {
             asChild
             variant="outline" 
             size="lg" 
-            className="bg-transparent border-white text-white hover:bg-white hover:text-gray-900 px-8 py-6 text-lg"
+            className="bg-transparent border-[#fdf4cf] text-[#fdf4cf] hover:bg-[#fdf4cf] hover:text-gray-900 px-8 py-6 text-lg"
           >
             <Link to="/how-it-works">Wie es funktioniert</Link>
           </Button>
