@@ -8,7 +8,7 @@ const CallToAction: React.FC = () => {
     <section className="py-16 bg-brand-green text-[#fdf4cf]">
       <div className="container mx-auto px-4 text-center">
         <img 
-          src="/lovable-uploads/08779fad-b388-4145-a496-ad133012d718.png" 
+          src="/lovable-uploads/5f5789f0-b5b2-4af1-b88e-80801b43c2df.png" 
           alt="VitaMeal Logo" 
           className="h-16 mx-auto mb-6"
         />

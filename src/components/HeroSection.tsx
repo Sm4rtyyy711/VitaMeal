@@ -18,7 +18,7 @@ const HeroSection: React.FC = () => {
       {/* Content */}
       <div className="relative container mx-auto px-4 py-24 md:py-32 flex flex-col items-center text-center">
         <img 
-          src="/lovable-uploads/08779fad-b388-4145-a496-ad133012d718.png" 
+          src="/lovable-uploads/5f5789f0-b5b2-4af1-b88e-80801b43c2df.png" 
           alt="VitaMeal Logo" 
           className="h-24 mb-6"
         />
