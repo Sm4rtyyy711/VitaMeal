@@ -35,7 +35,7 @@ const HowItWorks: React.FC = () => {
         {/* Hero Section */}
         <div className="bg-brand-green text-white py-16">
           <div className="container mx-auto px-4 text-center">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">Wie PrepMyMeal funktioniert</h1>
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">Wie VitaMeal funktioniert</h1>
             <p className="text-xl max-w-2xl mx-auto">
               Gesunde Ernährung war noch nie so einfach. Entdecke unseren unkomplizierten Prozess, der dir Zeit spart und deine Ernährungsziele unterstützt.
             </p>
@@ -78,7 +78,7 @@ const HowItWorks: React.FC = () => {
           <div className="text-center mt-16">
             <h2 className="text-2xl font-bold mb-4">Bereit, es selbst zu erleben?</h2>
             <p className="text-gray-600 mb-8">
-              Starte jetzt mit deiner ersten Bestellung und überzeuge dich von der Qualität und Einfachheit von PrepMyMeal.
+              Starte jetzt mit deiner ersten Bestellung und überzeuge dich von der Qualität und Einfachheit von VitaMeal.
             </p>
             <Button 
               asChild

@@ -9,7 +9,7 @@ const CallToAction: React.FC = () => {
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-6">Bereit für gesundes, leckeres Essen?</h2>
         <p className="text-xl mb-8 max-w-2xl mx-auto">
-          Starte jetzt mit PrepMyMeal und erhalte frische, ausgewogene Mahlzeiten direkt zu dir nach Hause.
+          Starte jetzt mit VitaMeal und erhalte frische, ausgewogene Mahlzeiten direkt zu dir nach Hause.
         </p>
         <Button 
           asChild

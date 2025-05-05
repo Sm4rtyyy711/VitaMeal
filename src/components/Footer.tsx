@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Column 1 - Logo & About */}
           <div>
-            <h3 className="text-xl font-bold mb-4">PrepMyMeal</h3>
+            <h3 className="text-xl font-bold mb-4">VitaMeal</h3>
             <p className="text-gray-300 mb-4">
               Gesunde Mahlzeiten, frisch zubereitet und direkt zu dir nach Hause geliefert.
             </p>
@@ -71,12 +71,12 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Kontakt</h3>
             <address className="not-italic text-gray-300">
-              <p className="mb-2">PrepMyMeal GmbH</p>
+              <p className="mb-2">VitaMeal GmbH</p>
               <p className="mb-2">Beispielstraße 123</p>
               <p className="mb-2">12345 Berlin</p>
               <p className="mb-2">Deutschland</p>
               <p className="mb-2">
-                <a href="mailto:info@prepmymeal.com" className="hover:text-white">info@prepmymeal.com</a>
+                <a href="mailto:info@vitameal.com" className="hover:text-white">info@vitameal.com</a>
               </p>
               <p>
                 <a href="tel:+49123456789" className="hover:text-white">+49 123 456789</a>
@@ -86,7 +86,7 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} PrepMyMeal GmbH. Alle Rechte vorbehalten.</p>
+          <p>&copy; {new Date().getFullYear()} VitaMeal GmbH. Alle Rechte vorbehalten.</p>
         </div>
       </div>
     </footer>

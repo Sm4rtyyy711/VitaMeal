@@ -99,7 +99,7 @@ const Contact: React.FC = () => {
                     <div>
                       <h3 className="font-semibold">Adresse</h3>
                       <p className="text-gray-600">
-                        PrepMyMeal GmbH<br />
+                        VitaMeal GmbH<br />
                         Beispielstraße 123<br />
                         12345 Berlin<br />
                         Deutschland
@@ -114,8 +114,8 @@ const Contact: React.FC = () => {
                     <div>
                       <h3 className="font-semibold">E-Mail</h3>
                       <p className="text-gray-600">
-                        <a href="mailto:info@prepmymeal.com" className="hover:text-brand-green">
-                          info@prepmymeal.com
+                        <a href="mailto:info@vitameal.com" className="hover:text-brand-green">
+                          info@vitameal.com
                         </a>
                       </p>
                     </div>
