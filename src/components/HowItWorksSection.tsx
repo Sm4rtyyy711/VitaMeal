@@ -25,14 +25,14 @@ const HowItWorksSection: React.FC = () => {
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">So funktioniert's</h2>
         <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-          PrepMyMeal macht gesunde Ernährung einfach und bequem. In nur wenigen Schritten bekommst du deine frischen Mahlzeiten direkt nach Hause.
+          VitaMeal ermöglicht dir eine gesunde und abwechslungsreiche Ernährung einfach und bequem. In nur wenigen Schritten bekommst du deine frischen Mahlzeiten direkt nach Hause.
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           <Step 
             number={1}
-            title="Wähle deine Mahlzeiten"
-            description="Durchstöbere unser vielfältiges Angebot und wähle die Gerichte, die dir gefallen."
+            title="Konfiguriere deine Mahlzeit"
+            description="Durchstöbere unser vielfältiges Angebot und wähle die Zutaten, die dir gefallen."
           />
           
           <Step 

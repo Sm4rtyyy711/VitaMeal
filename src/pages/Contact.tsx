@@ -100,8 +100,8 @@ const Contact: React.FC = () => {
                       <h3 className="font-semibold">Adresse</h3>
                       <p className="text-gray-600">
                         VitaMeal GmbH<br />
-                        Beispielstraße 123<br />
-                        12345 Berlin<br />
+                        Weiß-Ferdl-Weg 15<br />
+                        84030 Ergolding<br />
                         Deutschland
                       </p>
                     </div>
@@ -114,8 +114,8 @@ const Contact: React.FC = () => {
                     <div>
                       <h3 className="font-semibold">E-Mail</h3>
                       <p className="text-gray-600">
-                        <a href="mailto:info@vitameal.com" className="hover:text-brand-green">
-                          info@vitameal.com
+                        <a href="mailto:VitaMeal4U@gmail.com" className="hover:text-brand-green">
+                          VitaMeal4U@gmail.com
                         </a>
                       </p>
                     </div>
@@ -128,8 +128,8 @@ const Contact: React.FC = () => {
                     <div>
                       <h3 className="font-semibold">Telefon</h3>
                       <p className="text-gray-600">
-                        <a href="tel:+49123456789" className="hover:text-brand-green">
-                          +49 123 456789
+                        <a href="tel:+491736226540" className="hover:text-brand-green">
+                          +49 173 6226540
                         </a>
                       </p>
                     </div>

@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '@/contexts/CartContext';
@@ -18,6 +19,11 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center">
+            <img 
+              src="/lovable-uploads/5f5789f0-b5b2-4af1-b88e-80801b43c2df.png" 
+              alt="VitaMeal Logo" 
+              className="h-8 mr-2" 
+            />
             <span className="text-2xl font-bold text-brand-green">VitaMeal</span>
           </Link>
 

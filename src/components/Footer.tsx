@@ -78,14 +78,14 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-semibold mb-4">Kontakt</h3>
             <address className="not-italic text-gray-300">
               <p className="mb-2">VitaMeal GmbH</p>
-              <p className="mb-2">Beispielstraße 123</p>
-              <p className="mb-2">12345 Berlin</p>
+              <p className="mb-2">Weiß-Ferdl-Weg 15</p>
+              <p className="mb-2">84030 Ergolding</p>
               <p className="mb-2">Deutschland</p>
               <p className="mb-2">
-                <a href="mailto:info@vitameal.com" className="hover:text-[#fdf4cf]">info@vitameal.com</a>
+                <a href="mailto:VitaMeal4U@gmail.com" className="hover:text-[#fdf4cf]">VitaMeal4U@gmail.com</a>
               </p>
               <p>
-                <a href="tel:+49123456789" className="hover:text-[#fdf4cf]">+49 123 456789</a>
+                <a href="tel:+491736226540" className="hover:text-[#fdf4cf]">+49 173 6226540</a>
               </p>
             </address>
           </div>

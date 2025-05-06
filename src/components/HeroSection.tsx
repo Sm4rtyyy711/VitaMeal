@@ -17,12 +17,6 @@ const HeroSection: React.FC = () => {
       
       {/* Content */}
       <div className="relative container mx-auto px-4 py-24 md:py-32 flex flex-col items-center text-center">
-        <img 
-          src="/lovable-uploads/5f5789f0-b5b2-4af1-b88e-80801b43c2df.png" 
-          alt="VitaMeal Logo" 
-          className="h-24 mb-6"
-        />
-        
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
           Gesunde Mahlzeiten direkt zu dir nach Hause
         </h1>
