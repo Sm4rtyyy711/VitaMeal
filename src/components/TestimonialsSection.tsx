@@ -54,7 +54,7 @@ const TestimonialsSection: React.FC = () => {
           />
           
           <Testimonial 
-            quote="Seit ich PrepMyMeal nutze, spare ich so viel Zeit und Stress. Die Qualität der Gerichte ist erstklassig und die Lieferung immer pünktlich."
+            quote="Seit ich VitaMeal nutze, spare ich so viel Zeit und Stress. Die Qualität der Gerichte ist erstklassig und die Lieferung immer pünktlich."
             author="Thomas M."
             image="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
           />

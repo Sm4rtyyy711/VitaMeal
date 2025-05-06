@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -23,21 +22,21 @@ const Shop: React.FC = () => {
     side: '',
     vegetables: '',
     sauces: [],
-    price: 9.99
+    price: 4.99
   });
   
   const proteins = [
     { id: 'beef', name: 'Rind', image: 'https://images.unsplash.com/photo-1588168333986-5078d3ae3976?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80' },
-    { id: 'chicken', name: 'Huhn', image: 'https://images.unsplash.com/photo-1604503468506-a8da13d82791?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80' },
+    { id: 'chicken', name: 'Huhn', image: 'https://images.unsplash.com/photo-1587248523841-82d7908fca2c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80' },
     { id: 'salmon', name: 'Lachs', image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80' },
-    { id: 'soy', name: 'Soja', image: 'https://images.unsplash.com/photo-1587486913049-53fc88980cfc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80' },
+    { id: 'soy', name: 'Soja', image: 'https://www.velivery.com/thumbnail/7e/94/3b/1705589880/Velivery_Contentseite_Soja_Contentgrafik_02%20(1)_800x800.jpg' },
   ];
   
   const sides = [
     { id: 'potatoes', name: 'Kartoffeln', image: 'https://images.unsplash.com/photo-1518977676601-b53f82aba655?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80' },
-    { id: 'sweet-potatoes', name: 'Süßkartoffeln', image: 'https://images.unsplash.com/photo-1596451190630-186aff535bf2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80' },
+    { id: 'sweet-potatoes', name: 'Süßkartoffeln', image: 'https://images.unsplash.com/photo-1596282936681-4dcba8a0acb4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80' },
     { id: 'rice', name: 'Reis', image: 'https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80' },
-    { id: 'pasta', name: 'Nudeln', image: 'https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80' },
+    { id: 'pasta', name: 'Nudeln', image: 'https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80' },
   ];
   
   const vegetables = [

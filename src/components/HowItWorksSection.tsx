@@ -31,8 +31,8 @@ const HowItWorksSection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           <Step 
             number={1}
-            title="Konfiguriere deine Mahlzeit"
-            description="Durchstöbere unser vielfältiges Angebot und wähle die Zutaten, die dir gefallen."
+            title="Konfiguriere deine Mahlzeiten"
+            description="Durchstöbere unser vielfältiges Angebot im Shop. Ob vegetarisch, proteinreich oder Low-Carb – bei uns findest du genau die Mahlzeiten, die zu deinen Vorlieben und Ernährungszielen passen. Jede Mahlzeit ist nährstoffreich und von unseren Köchen frisch zubereitet."
           />
           
           <Step 

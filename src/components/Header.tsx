@@ -1,143 +1,185 @@
 
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useCart } from '@/contexts/CartContext';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { ShoppingCart, Menu, X, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { ShoppingCart, Menu, X } from 'lucide-react';
+import { useCart } from '@/contexts/CartContext';
+import { useMobile } from '@/hooks/use-mobile';
+import LoginPopup from './LoginPopup';
+import RegisterPopup from './RegisterPopup';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Header: React.FC = () => {
-  const { totalItems } = useCart();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const { cart } = useCart();
+  const isMobile = useMobile();
+  
+  const cartItemsCount = cart.reduce((total, item) => total + item.quantity, 0);
 
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  // Close menu when route changes
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location]);
+
+  const navLinks = [
+    { to: '/', label: 'Home' },
+    { to: '/shop', label: 'Shop' },
+    { to: '/how-it-works', label: 'Wie es funktioniert' },
+    { to: '/faq', label: 'FAQ' },
+    { to: '/contact', label: 'Kontakt' },
+  ];
+
+  const headerClass = `fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    isScrolled || menuOpen ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'
+  }`;
+  
+  const textColorClass = isScrolled || menuOpen || location.pathname !== '/' 
+    ? 'text-gray-800' 
+    : 'text-[#fdf4cf]';
+
+  const logoSrc = isScrolled || menuOpen || location.pathname !== '/'
+    ? '/lovable-uploads/5f5789f0-b5b2-4af1-b88e-80801b43c2df.png'
+    : '/lovable-uploads/5f5789f0-b5b2-4af1-b88e-80801b43c2df.png'; // Same logo, but you could use a white version if needed
 
   return (
-    <header className="bg-[#fdf4cf] shadow-sm sticky top-0 z-50">
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <img 
-              src="/lovable-uploads/5f5789f0-b5b2-4af1-b88e-80801b43c2df.png" 
-              alt="VitaMeal Logo" 
-              className="h-8 mr-2" 
-            />
-            <span className="text-2xl font-bold text-brand-green">VitaMeal</span>
-          </Link>
+    <header className={headerClass}>
+      <div className="container mx-auto px-4 flex justify-between items-center">
+        {/* Logo */}
+        <Link to="/" className="flex items-center">
+          <img src={logoSrc} alt="VitaMeal Logo" className="h-8 mr-2" />
+          <span className={`text-lg font-bold ${textColorClass}`}>VitaMeal</span>
+        </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-gray-700 hover:text-brand-green font-medium">
-              Home
-            </Link>
-            <Link to="/shop" className="text-gray-700 hover:text-brand-green font-medium">
-              Shop
-            </Link>
-            <Link to="/how-it-works" className="text-gray-700 hover:text-brand-green font-medium">
-              Wie es funktioniert
-            </Link>
-            <Link to="/contact" className="text-gray-700 hover:text-brand-green font-medium">
-              Kontakt
-            </Link>
-            <Link to="/faq" className="text-gray-700 hover:text-brand-green font-medium">
-              FAQ
-            </Link>
-          </nav>
-
-          {/* User Actions */}
-          <div className="flex items-center space-x-4">
-            {/* Account Link (non-functional as per requirements) */}
-            <Button variant="ghost" className="hidden md:flex items-center">
-              <span>Konto</span>
-            </Button>
-            
-            {/* Cart */}
-            <Link to="/cart" className="relative">
-              <Button variant="ghost" className="relative">
-                <ShoppingCart className="h-6 w-6" />
-                {totalItems > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-brand-green text-[#fdf4cf] rounded-full w-5 h-5 flex items-center justify-center text-xs">
-                    {totalItems}
-                  </span>
-                )}
-              </Button>
-            </Link>
-            
-            {/* Mobile Menu Toggle */}
-            <Button
-              variant="ghost"
-              className="md:hidden"
-              onClick={toggleMobileMenu}
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center space-x-8">
+          {navLinks.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className={`${textColorClass} hover:text-brand-green transition-colors ${
+                location.pathname === link.to ? 'font-semibold' : ''
+              }`}
             >
-              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </Button>
-          </div>
-        </div>
+              {link.label}
+            </Link>
+          ))}
+        </nav>
 
-        {/* Mobile Navigation */}
-        {mobileMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4">
-            <ul className="flex flex-col space-y-4">
-              <li>
-                <Link 
-                  to="/" 
-                  className="block text-gray-700 hover:text-brand-green font-medium"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  to="/shop" 
-                  className="block text-gray-700 hover:text-brand-green font-medium"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Shop
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  to="/how-it-works" 
-                  className="block text-gray-700 hover:text-brand-green font-medium"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Wie es funktioniert
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  to="/contact" 
-                  className="block text-gray-700 hover:text-brand-green font-medium"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Kontakt
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  to="/faq" 
-                  className="block text-gray-700 hover:text-brand-green font-medium"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  FAQ
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  to="#" 
-                  className="block text-gray-700 hover:text-brand-green font-medium"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Konto
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        )}
+        {/* Actions */}
+        <div className="flex items-center">
+          {/* User Account Dropdown (Desktop) */}
+          <div className="hidden md:block mr-4">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="icon" className={`${textColorClass} hover:bg-gray-100 hover:text-brand-green`}>
+                  <User className="h-5 w-5" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem asChild>
+                  <LoginPopup 
+                    trigger={
+                      <button className="w-full text-left cursor-pointer">Anmelden</button>
+                    } 
+                  />
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <RegisterPopup 
+                    trigger={
+                      <button className="w-full text-left cursor-pointer">Registrieren</button>
+                    } 
+                  />
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
+          
+          {/* Cart */}
+          <Link to="/cart" className="relative mr-2 md:mr-0">
+            <Button variant="ghost" size="icon" className={`${textColorClass} hover:bg-gray-100 hover:text-brand-green`}>
+              <ShoppingCart className="h-5 w-5" />
+              {cartItemsCount > 0 && (
+                <span className="absolute -top-1 -right-1 bg-brand-green text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                  {cartItemsCount}
+                </span>
+              )}
+            </Button>
+          </Link>
+          
+          {/* Mobile Menu Toggle */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className={`ml-2 md:hidden ${textColorClass}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </Button>
+        </div>
       </div>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="md:hidden bg-white border-t mt-2 py-4 px-4 shadow-lg">
+          <nav className="flex flex-col space-y-4">
+            {navLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className={`text-gray-800 hover:text-brand-green transition-colors ${
+                  location.pathname === link.to ? 'font-semibold' : ''
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <div className="pt-2 border-t">
+              <LoginPopup 
+                trigger={
+                  <Button 
+                    variant="ghost" 
+                    className="w-full justify-start text-gray-800 hover:text-brand-green mb-2"
+                  >
+                    Anmelden
+                  </Button>
+                } 
+              />
+              <RegisterPopup 
+                trigger={
+                  <Button 
+                    variant="ghost" 
+                    className="w-full justify-start text-gray-800 hover:text-brand-green"
+                  >
+                    Registrieren
+                  </Button>
+                } 
+              />
+            </div>
+          </nav>
+        </div>
+      )}
     </header>
   );
 };
