@@ -49,21 +49,21 @@ const HowItWorks: React.FC = () => {
               number={1}
               title="Wähle deine Mahlzeiten"
               description="Durchstöbere unser vielfältiges Angebot im Shop. Ob vegetarisch, proteinreich oder Low-Carb – bei uns findest du genau die Mahlzeiten, die zu deinen Vorlieben und Ernährungszielen passen. Jede Mahlzeit ist nährstoffreich und von unseren Köchen frisch zubereitet."
-              image="https://images.unsplash.com/photo-1544247193-b94a27dedeb2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              image="https://images.unsplash.com/photo-1607083206869-4c7672e72a8a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
             />
             
             <ProcessStep 
               number={2}
               title="Bestelle online"
               description="Lege deine ausgewählten Mahlzeiten in den Warenkorb und schließe deine Bestellung ab. Du kannst problemlos für mehrere Tage oder sogar Wochen im Voraus planen. Unser Bestellsystem ist einfach und sicher – nur wenige Klicks und deine Mahlzeiten sind auf dem Weg zu dir."
-              image="https://images.unsplash.com/photo-1563013544-08f7b86295d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              image="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
             />
             
             <ProcessStep 
               number={3}
               title="Wir liefern direkt zu dir"
               description="Deine Mahlzeiten werden sorgfältig verpackt und gekühlt zu deinem Wunschtermin geliefert. Unsere zuverlässige Lieferung sorgt dafür, dass du deine Mahlzeiten frisch und in Top-Qualität erhältst – egal ob zu Hause oder im Büro."
-              image="https://images.unsplash.com/photo-1605242809997-04268520132b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              image="https://images.unsplash.com/photo-1589136777398-5c7a4bcc7fac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
             />
             
             <ProcessStep 
