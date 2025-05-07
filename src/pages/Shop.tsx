@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -12,6 +13,7 @@ interface MealConfig {
   vegetables: string;
   sauces: string[];
   price: number;
+  quantity: number;
 }
 
 const Shop: React.FC = () => {
@@ -22,21 +24,22 @@ const Shop: React.FC = () => {
     side: '',
     vegetables: '',
     sauces: [],
-    price: 4.99
+    price: 4.99,
+    quantity: 1
   });
   
   const proteins = [
-    { id: 'beef', name: 'Rind', image: 'https://images.unsplash.com/photo-1588168333986-5078d3ae3976?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80' },
-    { id: 'chicken', name: 'Huhn', image: 'https://images.unsplash.com/photo-1587248523841-82d7908fca2c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80' },
-    { id: 'salmon', name: 'Lachs', image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80' },
+    { id: 'beef', name: 'Rind', image: 'https://wamayu.de/wp-content/uploads/2020/12/Rinder-Steak-Waging-Wamayu.jpg' },
+    { id: 'chicken', name: 'Huhn', image: 'https://www.der-lebensmittel-punkt.de/wp-content/uploads/2017/10/H%C3%A4nchenbrustfilet_G-1.jpg' },
+    { id: 'salmon', name: 'Lachs', image: 'https://www.tastingtable.com/img/gallery/is-it-safe-to-eat-raw-salmon/l-intro-1642705828.jpg' },
     { id: 'soy', name: 'Soja', image: 'https://www.velivery.com/thumbnail/7e/94/3b/1705589880/Velivery_Contentseite_Soja_Contentgrafik_02%20(1)_800x800.jpg' },
   ];
   
   const sides = [
     { id: 'potatoes', name: 'Kartoffeln', image: 'https://images.unsplash.com/photo-1518977676601-b53f82aba655?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80' },
-    { id: 'sweet-potatoes', name: 'Süßkartoffeln', image: 'https://images.unsplash.com/photo-1596282936681-4dcba8a0acb4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80' },
+    { id: 'sweet-potatoes', name: 'Süßkartoffeln', image: 'https://cranecuisine.de/wp-content/uploads/2021/04/Knusprige-Suesskartoffelpommes.jpg' },
     { id: 'rice', name: 'Reis', image: 'https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80' },
-    { id: 'pasta', name: 'Nudeln', image: 'https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80' },
+    { id: 'pasta', name: 'Nudeln', image: 'https://th.bing.com/th/id/OIP.3f4yJkheWk7BeGSSctPNCQHaFj?cb=iwp1&rs=1&pid=ImgDetMain' },
   ];
   
   const vegetables = [
@@ -53,6 +56,12 @@ const Shop: React.FC = () => {
     { id: 'curry-yogurt', name: 'Curry-Joghurt', description: 'Milde Joghurtsauce mit Currygewürzen' },
     { id: 'garlic-olive', name: 'Knoblauch-Olivenöl', description: 'Mediterranes Olivenöl mit frischem Knoblauch' },
     { id: 'sweet-chili', name: 'Sweet Chili', description: 'Süß-scharfe Chilisauce' },
+  ];
+  
+  const quantityOptions = [
+    { id: 'single', name: 'Einzeln', price: 4.99 },
+    { id: '6pack', name: '6er-Pack', price: 28.75 },
+    { id: '12pack', name: '12er-Pack', price: 56.99 },
   ];
   
   const handleProteinChange = (value: string) => {
@@ -102,6 +111,17 @@ const Shop: React.FC = () => {
     }
   };
   
+  const handleQuantityChange = (quantityId: string) => {
+    const selectedOption = quantityOptions.find(option => option.id === quantityId);
+    if (selectedOption) {
+      setMealConfig({
+        ...mealConfig,
+        price: selectedOption.price,
+        quantity: quantityId === 'single' ? 1 : (quantityId === '6pack' ? 6 : 12)
+      });
+    }
+  };
+  
   const addMealToCart = () => {
     // Validate that all required options are selected
     if (!mealConfig.protein || !mealConfig.side || !mealConfig.vegetables) {
@@ -124,10 +144,11 @@ const Shop: React.FC = () => {
     // Create cart item
     const mealName = `${proteinName} mit ${sideName} und ${vegetablesName}-Gemüse`;
     const description = sauceNames ? `Soßen: ${sauceNames}` : 'Ohne Soße';
+    const quantityText = mealConfig.quantity > 1 ? ` (${mealConfig.quantity}er-Pack)` : '';
     
     addToCart({
       id: Date.now(), // Use timestamp as unique ID
-      name: mealName,
+      name: mealName + quantityText,
       price: mealConfig.price,
       quantity: 1,
       image: proteins.find(p => p.id === mealConfig.protein)?.image || '',
@@ -304,6 +325,42 @@ const Shop: React.FC = () => {
                       </div>
                     </div>
                     <p className="text-sm text-gray-600">{sauce.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* Quantity Selection */}
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-4">5. Wähle deine Paketgröße</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {quantityOptions.map((option) => (
+                  <div 
+                    key={option.id}
+                    className={`border rounded-lg p-4 cursor-pointer transition-all ${
+                      mealConfig.price === option.price
+                        ? 'border-brand-green ring-2 ring-brand-green' 
+                        : 'hover:shadow-md'
+                    }`}
+                    onClick={() => handleQuantityChange(option.id)}
+                  >
+                    <div className="flex items-center justify-between mb-2">
+                      <div>
+                        <span className="font-medium">{option.name}</span>
+                        <p className="text-sm text-gray-600 mt-1">€{option.price.toFixed(2)}</p>
+                      </div>
+                      <div className={`w-5 h-5 rounded-full border ${
+                        mealConfig.price === option.price
+                          ? 'bg-brand-green border-brand-green'
+                          : 'border-gray-300'
+                      }`}>
+                        {mealConfig.price === option.price && (
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" className="w-5 h-5">
+                            <path fillRule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clipRule="evenodd" />
+                          </svg>
+                        )}
+                      </div>
+                    </div>
                   </div>
                 ))}
               </div>
