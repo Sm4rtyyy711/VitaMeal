@@ -49,7 +49,7 @@ const HowItWorks: React.FC = () => {
               number={1}
               title="Wähle deine Mahlzeiten"
               description="Durchstöbere unser vielfältiges Angebot im Shop. Ob vegetarisch, proteinreich oder Low-Carb – bei uns findest du genau die Mahlzeiten, die zu deinen Vorlieben und Ernährungszielen passen. Jede Mahlzeit ist nährstoffreich und von unseren Köchen frisch zubereitet."
-              image="https://images.unsplash.com/photo-1607083206869-4c7672e72a8a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              image="public/lovable-uploads/796a87ae-e949-4678-be10-5704910355d3.png"
             />
             
             <ProcessStep 
@@ -63,7 +63,7 @@ const HowItWorks: React.FC = () => {
               number={3}
               title="Wir liefern direkt zu dir"
               description="Deine Mahlzeiten werden sorgfältig verpackt und gekühlt zu deinem Wunschtermin geliefert. Unsere zuverlässige Lieferung sorgt dafür, dass du deine Mahlzeiten frisch und in Top-Qualität erhältst – egal ob zu Hause oder im Büro."
-              image="https://images.unsplash.com/photo-1589136777398-5c7a4bcc7fac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              image="public/lovable-uploads/40c03f07-9c63-4715-81a0-b20a39a03455.png"
             />
             
             <ProcessStep 
