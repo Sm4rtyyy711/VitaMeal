@@ -59,9 +59,9 @@ const Shop: React.FC = () => {
   ];
   
   const quantityOptions = [
-    { id: 'single', name: 'Einzeln', price: 4.99 },
-    { id: '6pack', name: '6er-Pack', price: 28.75 },
-    { id: '12pack', name: '12er-Pack', price: 56.99 },
+    { id: 'single', name: 'Einzeln', price: 6.99 },
+    { id: '6pack', name: '6er-Pack', price: 34.99},
+    { id: '12pack', name: '12er-Pack', price: 62.99 },
   ];
   
   const handleProteinChange = (value: string) => {
