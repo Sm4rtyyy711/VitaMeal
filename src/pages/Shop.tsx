@@ -24,7 +24,7 @@ const Shop: React.FC = () => {
     side: '',
     vegetables: '',
     sauces: [],
-    price: 4.99,
+    price: 6.99,
     quantity: 1
   });
   
